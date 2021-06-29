@@ -19,6 +19,7 @@ app.use(cors())
 app.use('/posts', postRoutes)
 app.use('/user', userRoutes)
 
+const CONNECTION_URL = 'mongodb+srv://VJSeraphim:immortal2050@cluster0.xhcni.mongodb.net/my_memories_mernapp?retryWrites=true&w=majority'
 const PORT = process.env.PORT || 5000
 
 mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true}).then(() => app.listen(PORT, () =>console.log(`Server is Running in Port No. ${PORT}`))).catch((error) => console.log(error.message))
